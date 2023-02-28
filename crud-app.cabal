@@ -1,0 +1,139 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           crud-app
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/crud-app#readme>
+homepage:       https://github.com/githubuser/crud-app#readme
+bug-reports:    https://github.com/githubuser/crud-app/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2023 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/crud-app
+
+library
+  exposed-modules:
+      API.Movie
+      API.User
+      Core.Movie.Handler
+      Core.Movie.Type
+      Core.User.Handler
+      Core.User.Type
+      Server
+      Storage.Cache.Query.Movie
+      Storage.Database.DB
+      Storage.Database.Query.Movie
+      Storage.Database.Query.User
+      Storage.Database.Redis
+      Utils
+  other-modules:
+      Paths_crud_app
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-missing-export-lists
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cookie
+    , esqueleto
+    , hedis
+    , http-media
+    , logging
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , servant
+    , servant-server
+    , text
+    , time
+    , unliftio-core
+    , uuid
+    , wai
+    , wai-extra
+    , wai-logger
+    , wai-middleware-static
+    , warp
+  default-language: Haskell2010
+
+executable crud-app-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_crud_app
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-missing-export-lists -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cookie
+    , crud-app
+    , esqueleto
+    , hedis
+    , http-media
+    , logging
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , servant
+    , servant-server
+    , text
+    , time
+    , unliftio-core
+    , uuid
+    , wai
+    , wai-extra
+    , wai-logger
+    , wai-middleware-static
+    , warp
+  default-language: Haskell2010
+
+test-suite crud-app-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_crud_app
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-missing-export-lists -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cookie
+    , crud-app
+    , esqueleto
+    , hedis
+    , http-media
+    , logging
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , servant
+    , servant-server
+    , text
+    , time
+    , unliftio-core
+    , uuid
+    , wai
+    , wai-extra
+    , wai-logger
+    , wai-middleware-static
+    , warp
+  default-language: Haskell2010
